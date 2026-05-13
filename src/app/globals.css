@@ -2,32 +2,325 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@font-face {
+    font-family: shabnam;
+    src: url("/fonts/shabnam/Shabnam-Medium.woff");
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  @font-face {
+    font-family: shabnam-Bold;
+    src: url("/fonts/shabnam/Shabnam-Bold.woff");
   }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 ;
+    border:0;
+    font-family: shabnam;
+  }
+
+  .mycontainer{
+    width:1280px ;
+    margin: 0 auto;
+
+  
+  }
+
+  html,body{
+    font-size: 12px;
+ 
+      overflow-x: hidden;
+   
+    
+  }
+
+
+  .color1{
+    color: #7CC503;
+  }
+ 
+
+
+  span.swiper-pagination-bullet{
+    width: 8px;
+    height: 8px;
+    margin: 25px 0 25px 0;
+    background-color: #017446;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    transition: all .2s ease;
+    box-shadow: 0 0 0 0 white, 0 0 0 0 #ffffff;
+  }
+
+
+  span.swiper-pagination-bullet-active {
+    box-shadow: 0 0 0 6px white, 0 0 0 7px #017446;
+  }
+
+
+/* ------------------ dayerehaye swiper---------------------------*/
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #fff; */
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 50%;
+  }
+  
+  .circle:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+  .circle:hover::before {
+    animation: rotateImage 1s infinite;
+    border: 8px solid #7dc70a;
+    border-radius: 50%;
+    clip-path: inset(0 0 50% 50%);
+  }
+
+
+
+  /* ------------------ dayerehaye swiper---------------------------*/
+
+
+  @keyframes rotateImage {
+    0% {
+          transform: rotate3d(0, 0, 0, 0deg);
+       }
+  100% {
+        transform: rotate3d(0, 0, 1, 360deg);
+       }
+  }
+
+/* ------------------ harekate ajzaye  banner---------------------------*/
+  .moving-left
+{
+  
+  position: relative;
+  transition: transform 0.3s ease;
+  transform: translateX(0px);
+
+ 
+}
+.moving-left:hover
+{
+ transform: translateX(20px);
+
+}
+
+.moving-up
+{
+  
+  position: relative;
+  transition: transform 0.3s ease;
+  transform: translateY(30px);
+
+ 
+}
+.moving-up:hover
+{
+ transform: translateY(0px);
+
+}
+/* ------------------ harekate ajzaye  banner---------------------------*/
+
+/* ------------------ harekate image zoom---------------------------*/
+.container {
+  display: inline-block;
+  overflow: hidden; 
+        
+}
+.container .img {
+  display: block;
+  transition: transform 4s;  
+}
+.container:hover .img {
+  transform: scale(1.3);
+  transform-origin: 50% 50%;
+}
+
+/* ------------------ harekate image zoom---------------------------*/
+
+
+/* ------------------ harekate background cart ha---------------------------*/
+
+
+.rotate {
+  transition: 1s ease;
+  }
+  
+  .rotate:hover{
+  -webkit-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+  transition: 1s ease;
+  }
+
+  
+/* ------------------ harekate background cart ha---------------------------*/
+
+
+
+  .swiper-scrollbar-drag{
+    background-color: #7CC503 !important;
+  }
+
+  .swiper-scrollbar.swiper-scrollbar-horizontal{
+    height: 8px !important;
+  }
+
+
+   .swiper.swiper-initialized.swiper-horizontal.swiper-rtl.swiper-backface-hidden.mySwiper{
+    padding-top: 106px !important;
+    margin-top: -110px !important;
+  } 
+
+  /* .swiper-button-prev{
+    position: absolute !important;
+    top: 25px !important;
+    right: 85% !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background-color: white !important;
+    border: 1px solid #e6e1e1 !important;
+    color: black !important;
+
+  
+  } */
+
+   .swiper-button-prev {
+    @apply absolute md:right-[80%]  lg:right-[85%] xl:right-[90%] top-[25px] right-[85%] w-[50px] h-[50px] rounded-[50%] bg-white border-solid border-2 border-[#e6e1e1]
+ text-black !important
+   }
+
+  /* .swiper-button-next{
+    position: absolute !important;
+    top: 25px !important;
+    left: 30px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background-color: white !important;
+    border: 1px solid rgb(230, 225, 225) !important;
+    color: black !important;
+
+  } */
+  .swiper-button-next{
+    @apply absolute top-[25px] text-black left-[30px] w-[50px] h-[50px] rounded-[50%]    bg-white  border-solid border-2 border-[#e6e1e1] !important
+  }
+
+  .swiper-button-next::after{
+    overflow: hidden !important;
+    width: 23px !important;
+    height: 23px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px !important;
+  }
+
+  .swiper-button-prev::after{
+    overflow: hidden !important;
+    width: 23px !important;
+    height: 23px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px !important;
+  }
+
+
+  .swiper-button-prev:hover{
+    background-color: #017446 !important;
+    color: white !important;
+
+  }
+  .swiper-button-next:hover{
+    background-color: #017446 !important;
+    color: white !important;
+
+  }
+ 
+
+/* 
+  .swal2-popup.swal2-modal.swal2-show{
+    width: 700px;
+    display: flex !important;
+  } */
+
+  .my-modal{
+    height: 600px !important;  /* به مقدار دلخواه تنظیم کنید */
+    overflow-y: auto;  /* در صورت نیاز به اسکرول عمودی */
+  }
+ 
+
+  .swiper-slide.swiper-slide.h-full.w-full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  input, textarea {
+    border: 1px solid gray;
+  }
+
+  
+  
+  
+  .swiper-grid > .swiper-wrapper {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 0.6%;
+  }
+  .swiper.swiper-initialized.swiper-horizontal.swiper-rtl.mySwiper.flex{
+    padding-top: 5%;
+    padding-right: 0.6%;
+  }
+
+  input[type='checkbox']:checked{
+    background-color: green;
+    background-image: none;
+  }
+
+  input[type='checkbox']{
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+  }
+
+
+ .swiper.swiper-initialized.swiper-horizontal.swiper-rtl.commentswiper.undefined{
+    width: 500px;
+  }
+
+  .swiper-button-next{
+    @apply hidden md:flex !important
+  }
+
+   .swiper-button-prev{
+     @apply hidden md:flex  !important
+     
+  }
+
+  .swiper-pagination {
+  display: flex !important;
+  flex-wrap: wrap !important; /* این مهمه */
+  justify-content: center; /* برای چینش وسط */
+  gap: 6px; /* فاصله بین دایره‌ها */
+  margin-top: 8px; /* کمی فاصله از پایین */
+  /* margin-left: 72px; */
+}
+
+ .bestseller-swiper .swiper-wrapper {
+  margin-top: 40px !important;
 }
