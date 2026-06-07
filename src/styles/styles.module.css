@@ -1,0 +1,10 @@
+.customPopup {
+    height: 550px !important;  /* ارتفاع مودال */
+    max-height: 1100px !important; /* حداکثر ارتفاع مودال */
+    overflow-y: auto; /* در صورت لزوم اسکرول اضافه می‌کند */
+    display: flex; /* برای صحیح کار کردن با محتوا */
+    flex-direction: column; /* برای مرتب کردن عناصر داخلی */
+}
+button.swal2-confirm.swal2-styled{
+    display: none !important;
+}

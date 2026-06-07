@@ -1,0 +1,15 @@
+.wrapper :global(.swiper-pagination-bullet) {
+    background-color: rgb(87, 169, 123) !important;
+
+    opacity: 1 !important;
+  }
+  
+  /* رنگ سبز برای بولت فعال */
+  .wrapper :global(.swiper-pagination-bullet-active) {
+    background-color: #017446 !important;
+  }
+
+.menu-swiper {
+  width: 100%;
+  min-height: 334px;
+}

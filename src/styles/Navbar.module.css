@@ -1,0 +1,21 @@
+.myNav{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+
+.myNav::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #7CC503;
+    transition: width .4s;
+}
+
+.myNav:hover::after {
+    width: 100%;
+    transition: width .4s;
+}

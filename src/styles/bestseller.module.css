@@ -1,0 +1,6 @@
+.wrapper :global(.bullet .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal){
+    display: none;
+}
+.wrapper :global(.best-seller-wrapper) .swiper-pagination {
+    display: none !important;
+  }

@@ -1,0 +1,23 @@
+.tabs {
+  position: relative;
+  margin-bottom: 50px;
+  margin-left: 50px;
+
+}
+.tabs:hover{
+    color:#01512c
+}
+
+.tabs::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -11%;
+  width: 120%;
+  height: 45%;
+  background-color: #e6f6d0;
+  z-index: -10;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
