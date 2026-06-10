@@ -23,6 +23,9 @@ const authAdmin=async()=>{
     const token = cookies().get('token')
     let user=null
 
+
+
+    
     if(token){
         const tokenPayload = verifyAccessToken(token.value)
         if(tokenPayload){

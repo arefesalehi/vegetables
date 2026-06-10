@@ -1,14 +1,14 @@
 
-
-export const dynamic = "force-dynamic";
-
 import connectToDB from '@/configs/db'
 import { verifyAccessToken } from '@/utils/auth'
 import { cookies } from 'next/headers'
 import userModel from '@/models/user'
+
 export async function GET() {
  await connectToDB()
-  const token = cookies.get('token')
+   const cookieStore = cookies()
+
+  const token = cookieStore.get('token')
   let user = null
 
   if (token) {
@@ -22,6 +22,6 @@ export async function GET() {
 
     return Response.json(user)
   } else {
-    return Response.json({ data: null, message: 'not access' }, { status: 401 })
+    return Response.json({ data: null, message: 'Not Access' }, { status: 401 })
   }
 }

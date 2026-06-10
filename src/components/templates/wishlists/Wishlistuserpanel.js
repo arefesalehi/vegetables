@@ -12,8 +12,6 @@ import { showswal } from '@/utils/helper'
 const Wishlistuserpanel = ({ wishes }) => {
   const { setIsCartOpen, openCart, cart, setCart } = useCart()
 
-  const router = useRouter()
-
   const removeProduct = async (id) => {
     swal({
       title: 'ایا از حذف اطمینان دارید؟',
@@ -33,10 +31,6 @@ const Wishlistuserpanel = ({ wishes }) => {
             buttons: 'ok'
           }).then(() => {
             location.reload()
-
-            // router.refresh()
-
-
           })
         }
 

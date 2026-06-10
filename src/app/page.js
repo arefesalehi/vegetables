@@ -22,9 +22,6 @@ import connectToDB from '@/configs/db'
 
 const page = async () => {
 
-
-
-
   await connectToDB()
    const dynamic = "force-dynamic"; // مهم برای جلوگیری از اجرای DB در build
   const user = await authUser() || {}
@@ -51,7 +48,7 @@ const page = async () => {
       <ZoomImage />
       <BestSeller user={JSON.parse(JSON.stringify(user || {}))} products={JSON.parse(JSON.stringify(products || []))} />
       <CustomerComments comments={JSON.parse(JSON.stringify(comments))} />
-      <UniqueProduct products={JSON.parse(JSON.stringify(products))} />
+      <UniqueProduct user={JSON.parse(JSON.stringify(user || {}))} products={JSON.parse(JSON.stringify(products))} />
       <Promote2 />
       <div className=" flex xl:w-[80%] w-[95%] gap-3 m-auto flex-wrap lg:flex-nowrap ">
 

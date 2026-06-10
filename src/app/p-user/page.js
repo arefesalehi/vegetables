@@ -25,11 +25,6 @@ const page = async () => {
   const tickets = await ticketModel.find({ user: user?._id, isAnswer: false })
 
 
-
-
-
-
-
   return (
     <>
       <UserPanelLayout>

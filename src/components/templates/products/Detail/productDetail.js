@@ -10,6 +10,8 @@ import Tabs from './Tabs'
 import { showswal } from '@/utils/helper'
 import { useState } from 'react'
 import AddToWishlist from '../../index/addtowishlist/AddToWishlist'
+import { FaPlus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa";
 
 const ProductDetail = ({ products }) => {
 
@@ -33,7 +35,7 @@ const ProductDetail = ({ products }) => {
           id: products._id,
           name: products.name,
           price: products.price,
-          img:products.img,
+          img: products.img,
           counter,
         }
 
@@ -83,26 +85,22 @@ const ProductDetail = ({ products }) => {
             <div className="flex">
               <FaCheckCircle className="bg-[00512C] ml-5" />
               <p className="text-xl mb-10">{products.counter} عدد در انبار</p>
-
-
-
-
             </div>
-           
+
 
             <div className="flex">
               <span className="lg:w-[20%] w-[45%]  ml-5 flex justify-between items-center pr-3 pl-3 h-[50px]  bg-[#ECECEC] rounded-[30px]">
-                <div onClick={()=>setCounter(counter+1)} className="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-[50%]">
-                  +
+                <div onClick={() => setCounter(counter + 1)} className="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-[50%]">
+                  <FaPlus />
                 </div>
-                <div className="flex justify-center items-center">{counter}</div>
-                <div onClick={()=>setCounter(counter-1)} className="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-[50%]">
-                  -
+                <div className="flex justify-center items-center text-lg">{counter}</div>
+                <div onClick={() => setCounter(counter - 1)} className="w-[30px] h-[30px] flex justify-center items-center bg-white rounded-[50%]">
+                  <FaMinus />
                 </div>
               </span>
               <button
                 onClick={addToCart}
-                className="w-[80%]  hover:bg-[#84D814]  hover:text-white flex text-xl items-center justify-center border border-[#00512C] h-[50px] rounded-[30px] "
+                className="w-[80%]  bg-[#85f109] hover:bg-[#84D814]  hover:text-white flex text-xl items-center justify-center border border-[#00512C] h-[50px] rounded-[30px] "
               >
                 افزودن به سبد خرید
               </button>
@@ -150,19 +148,19 @@ const ProductDetail = ({ products }) => {
               </p>
             </div>
 
-            <p className="mt-10 ">
-              <strong>کد کالا (SKU):</strong>
+            <p className="mt-10  ">
+              <strong className='ml-5'>کد کالا (SKU):</strong>
               {products.code}
             </p>
 
             <p className="mt-5">
-              <strong> دسته‌بندی :</strong>
+              <strong className='ml-5'> دسته‌بندی :</strong>
               {products.category}
             </p>
 
             <p className="mt-5 mb-40">
-              <strong> برچسب ها:</strong>
-              {products.tags}
+              <strong className='ml-5'> برچسب ها:</strong>
+              {products.tags.join(',')}
             </p>
           </div>
         </div>

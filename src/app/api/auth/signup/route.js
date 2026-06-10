@@ -13,12 +13,12 @@ export async function POST(req) {
     const { name, phone, email, password } = body
 
     const isUserExist = await userModel.findOne({
-      $or: [{ name }, { password }, { phone }],
+      $or: [{ name }, { email }, { phone }],
     })
 
     if (isUserExist) {
       return Response.json(
-        { message: 'this name or username or phone already exist' },
+        { message: 'this email or username or phone already exist' },
         { status: 422 },
       )
     }

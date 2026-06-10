@@ -9,19 +9,21 @@ const AddToWishlist = ({ notify, productId, userId }) => {
   const [user, setUser] = useState({})
 
 
-  useEffect(() => {
-    const authUser = async () => {
-      const res = await fetch("/api/auth/me");
-      console.log(res);
-      if (res.status === 200) {
-        const data = await res.json();
-        console.log(data);
-        setUser({ ...data });
-      }
-    };
+  // useEffect(() => {
+  //   const authUser = async () => {
+  //     const res = await fetch("/api/auth/me");
+   
 
-    authUser();
-  }, []);
+  //     console.log(res);
+  //     if (res.status === 200) {
+  //       const data = await res.json();
+   
+  //       setUser({ ...data });
+  //     }
+  //   };
+
+  //   authUser();
+  // }, []);
 
   const addTowishlist = async (e) => {
     e.preventDefault()
@@ -29,6 +31,7 @@ const AddToWishlist = ({ notify, productId, userId }) => {
       return showswal("برای افزودن به علاقه مندی ها ابتدا لاگین شوید  ", "error", "ok")
 
     }
+
     const res = await fetch('/api/wishlists', {
       method: 'POST',
       headers: {

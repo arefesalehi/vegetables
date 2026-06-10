@@ -121,7 +121,7 @@ const ContactForm = () => {
         <span className=" basis-full md:basis-1/3 mt-20 sm:mt-0 md:mt-20 text-xl pr-20 pb-20 pl-20 sm:pr-0 sm:pl-0 md:pr-20 md:pl-20   lg:pl-20 ">
           <p className="mt-10">
             <strong className="ml-3">آدرس:</strong>
-            ایران، استان تهران، تهران، خیابان آزادی، آزادی 01، کوچه دوم، پلاک
+            ایران، استان تهران، تهران، خیابان حافظ، خیابان غفار زاده پلاک
             01، کد پستی 1234567890
           </p>
           <p className="mt-10">

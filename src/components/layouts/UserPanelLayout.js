@@ -8,6 +8,10 @@ import { authUser } from '@/utils/serverHelpers'
 import UserPanelAlert from '../modules/p-user/UserPanelAlert'
 import { IoAlert } from 'react-icons/io5'
 import { redirect } from 'next/navigation'
+
+
+
+
 const UserPanelLayout = async ({ children }) => {
 
   const user = await authUser()
@@ -15,7 +19,6 @@ const UserPanelLayout = async ({ children }) => {
   if (!user) {
     redirect('/login-register')
   }
-
 
   return (
     <>

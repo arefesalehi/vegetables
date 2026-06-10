@@ -12,7 +12,7 @@ import swal from 'sweetalert'
 import { useRouter } from 'next/navigation'
 
 const Sidebar = () => {
-const router = useRouter()
+
 
 const logOut = () => {
   swal({
@@ -30,7 +30,8 @@ const logOut = () => {
           icon: 'sucees',
           buttons: 'ok',
         }).then(() => {
-          router.replace('/')
+          location.replace('/')
+          
         })
       }
     }

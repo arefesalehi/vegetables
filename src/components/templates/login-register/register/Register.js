@@ -63,7 +63,7 @@ const Register = ({ showLoginForm }) => {
       swal({
         title: 'ثبت نام با موفقیت انجام شد',
         icon:'success',
-        buttons: 'ورود به لاگین ',
+        buttons: 'ورود به صفحه لاگین ',
       }).then(()=> window.location.href = '/login-register')
     } else if (res.status === 422) {
        showswal(
@@ -160,6 +160,13 @@ const Register = ({ showLoginForm }) => {
                     <Label className="w-[80%] text-[#919193] m-auto text-xl font-bold ">
                       رمز عبور: <span className="text-red-700">*</span>
                     </Label>
+                        <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  type="password"
+                  placeholder="رمز عبور"
+                  className="w-[80%]  bg-[#f4f4f4] border-[#2cb571]  m-auto rounded-[10px] h-[45px] mt-1 mb-5"
+                />
                     
                   </>
                 )}
