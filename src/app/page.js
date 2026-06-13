@@ -20,6 +20,7 @@ import { CartProvider } from '@/context/Cartcontex'
 import ShoppingMenue from '@/components/modules/shoppingMenu/ShoppingMenue'
 import connectToDB from '@/configs/db'
 
+
 const page = async () => {
 
   await connectToDB()
@@ -41,6 +42,7 @@ const page = async () => {
 
   return (
     <>
+
       <ShoppingMenue/>
       <Banner />
       <Menu menus={JSON.parse(JSON.stringify(menus))} />

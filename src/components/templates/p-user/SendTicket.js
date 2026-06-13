@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { IoIosSend } from 'react-icons/io'
 import swal from 'sweetalert'
 const SendTicket = () => {
-  const router = useRouter()
+ 
   const [title, setTitle] = useState('')
   const [priority, setPriority] = useState(1)
   const [body, setBody] = useState('')
@@ -67,7 +67,7 @@ const SendTicket = () => {
         icon: "success",
         buttons: "مشاهده تیکت‌ها",
       }).then(() => {
-        router.replace("/p-user/tickets");
+        location.replace("/p-user/tickets");
       });
     }
   };

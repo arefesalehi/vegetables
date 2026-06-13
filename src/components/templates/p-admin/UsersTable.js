@@ -162,7 +162,7 @@ const router = useRouter()
                     <div className="ps-3">
                       <div className="text-base font-semibold">{user.name}</div>
                       <div className="font-normal text-gray-500">
-                        {user.email}
+                        {user.email ? user.email :'یافت نشد'}
                       </div>
                     </div>
                   </th>

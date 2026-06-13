@@ -2,6 +2,7 @@ import { authUser } from '@/utils/serverHelpers'
 import Sidebars from '../modules/p-admin/Sidebars'
 import { redirect } from 'next/navigation'
 
+
 const AdminPanelLayout = async ({ children }) => {
   const user = await authUser()
   if (user) {
@@ -13,6 +14,7 @@ const AdminPanelLayout = async ({ children }) => {
   }
 
 
+
    const safeUser = {
     _id: user._id?.toString(),
     name: user.name,
@@ -21,7 +23,8 @@ const AdminPanelLayout = async ({ children }) => {
     phone: user.phone,
   }
 
-  
+
+
   return (
     <>
       <div className=" w-full h-auto   ">

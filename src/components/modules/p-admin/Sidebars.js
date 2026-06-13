@@ -18,17 +18,13 @@ import Link from 'next/link'
 
 
 
+
+
 const Sidebars = ({ children , user}) => {
   const [collapsed, setCollapsed] = useState(false)
   const [mounted, setMounted] = useState(false)
  
-  const router = useRouter()
 
-
-  
-
-
-  
 
   useEffect(() => {
     setMounted(true)
@@ -48,7 +44,7 @@ const Sidebars = ({ children , user}) => {
             icon: 'success',
             buttons: 'باشه',
           }).then(() => {
-            router.replace('/')
+            location.replace('/')
           })
         }
       }
@@ -59,8 +55,12 @@ const Sidebars = ({ children , user}) => {
   if (!mounted) return null
 
   return (
-    <div className="flex w-full min-h-screen">
+  
+
+  <div className="flex w-full h-full ">
       {/* Sidebar */}
+
+
       <div style={{ direction: 'rtl' }}>
         <Sidebar
           rtl
@@ -95,7 +95,7 @@ const Sidebars = ({ children , user}) => {
             <MenuItem className='text-xl' icon={<HiUsers /> } component={<Link href="/p-admin/users" />} >
              کاربران
             </MenuItem>
-            <MenuItem  className='text-xl'icon={<IoMdLogOut /> } component={<Link href="/p-admin/products" />} onClick={logOut}>
+            <MenuItem  className='text-xl'icon={<IoMdLogOut /> } onClick={logOut}>
               خروج
             </MenuItem>
           </Menu>
@@ -103,7 +103,7 @@ const Sidebars = ({ children , user}) => {
       </div>
 
       {/* Main content */}
-      <div className="w-full">
+      <div className="w-full h-screen overflow-y-auto">
         {/* Topbar */}
         <div className="w-full h-[70px] flex bg-[#027b4c] items-center px-4 justify-between">
           <div className="flex items-center gap-4">
@@ -119,7 +119,7 @@ const Sidebars = ({ children , user}) => {
               />
             </div>
             <div className="text-white">
-              <p>{user.name}</p>
+              <p>{user?.name}</p>
               <p className="text-sm">ادمین</p>
             </div>
           </div>
@@ -147,6 +147,9 @@ const Sidebars = ({ children , user}) => {
         <div className="p-4">{children}</div>
       </div>
     </div>
+
+
+  
   )
 }
 

@@ -12,7 +12,7 @@ const Answer = async ({ tickets }) => {
         <div className="flex justify-between ">
           <div className="w-1/2 flex pt-2">
             <div className="w-[60px] mr-3 h-[60px] rounded-[50%] bg-green-400">
-              <Image width={100} height={100} src="asd" alt="pic" />
+              <Image width={100} height={100} src="/images/author-16_70x70.jpg" alt="pic"  className="rounded-[50%]" />
             </div>
             <div className="mr-3  flex flex-col justify-center ">
               <p className="text-white">{tickets.user.name}</p>

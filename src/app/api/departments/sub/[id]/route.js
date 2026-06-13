@@ -4,7 +4,7 @@ import connectToDB from '@/configs/db'
 
 export async function GET(req, { params }) {
   try {
- await   connectToDB()
+ await connectToDB()
     const id = params.id
     if (!isValidObjectId(id)) {
       return Response.json({ message: 'ID is not valid !!' }, { status: 422 })

@@ -58,7 +58,7 @@ const page = async ({ params }) => {
                               width={60}
                               height={60}
                               className="rounded-[50%]"
-                              src=""
+                              src="/images/author-13_70x70 (2).jpg"
                               alt="pic"
                             />
                           </div>
