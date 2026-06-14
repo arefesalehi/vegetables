@@ -11,7 +11,7 @@ export async function PUT(req){
 
         if(!discount){
             return Response.json({message:'code not found'},{status:404})
-        }else if(discount.uses === discount.maxUse){
+        }else if(discount.uses >= discount.maxUse){
             return Response.json({message:'code usage limit'},{status:422})
 
 
@@ -23,3 +23,4 @@ export async function PUT(req){
         return Response.json({message:error},{status:500})
     }
 }
+

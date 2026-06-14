@@ -54,7 +54,7 @@ export default async function RootLayout({ children }) {
       </head>
       <body>
         <CartProvider>
-       <AosInt />
+          <AosInt />
           <Navbar isLogin={user ? true : false} wishes={JSON.parse(JSON.stringify(wishes))} />
           {children}
           <ToastContainer />

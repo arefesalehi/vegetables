@@ -5,6 +5,9 @@ import { TiLocation } from "react-icons/ti";
 import { ImTruck } from "react-icons/im";
 
 const Detailbar = () => {
+
+
+  
   return (
     <>
       <div className="w-full md:h-[45px] h-[65px] bg-[#D0FFBD] flex justify-start pr-20 items-center">

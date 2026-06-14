@@ -24,18 +24,21 @@ import connectToDB from '@/configs/db'
 const page = async () => {
 
   await connectToDB()
-   const dynamic = "force-dynamic"; // مهم برای جلوگیری از اجرای DB در build
-  const user = await authUser() || {}
+  
+
+  const user = await authUser() 
   console.log('user homepage=>', user);
 
   const products = await productModel.find({})
-  console.log('products=>', products);
-
+  // console.log('products=>', products);
+ 
   const menus = await menuModel.find({})
-  console.log('menus=>', menus);
+  // console.log('menus=>', menus);
 
   const comments = await commentModel.find({})
   const newses = await newsModel.find({})
+
+
 
 
   
@@ -48,7 +51,7 @@ const page = async () => {
       <Menu menus={JSON.parse(JSON.stringify(menus))} />
       <Promote />
       <ZoomImage />
-      <BestSeller user={JSON.parse(JSON.stringify(user || {}))} products={JSON.parse(JSON.stringify(products || []))} />
+      <BestSeller  user={user}  products={JSON.parse(JSON.stringify(products || []))} />
       <CustomerComments comments={JSON.parse(JSON.stringify(comments))} />
       <UniqueProduct user={JSON.parse(JSON.stringify(user || {}))} products={JSON.parse(JSON.stringify(products))} />
       <Promote2 />

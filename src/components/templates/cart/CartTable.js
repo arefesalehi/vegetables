@@ -18,6 +18,7 @@ const CartTable = () => {
   const [discount, setDiscount] = useState('')
   const [counter, setCounter] = useState(card)
 
+
   const router = useRouter()
 
   useEffect(() => {
@@ -25,9 +26,6 @@ const CartTable = () => {
     setCard(localCart)
   }, [])
 
-  // useEffect(()=>{
-  //    totalPrice()
-  // },[card])
 
   const totalPrice = () => {
     let totalPrice = 0
@@ -47,7 +45,7 @@ const CartTable = () => {
 
 
   const checkDiscount = async () => {
-    setDiscount(null);
+    
 
     const res = await fetch('/api/discount/use', {
       method: 'PUT',
@@ -59,6 +57,7 @@ const CartTable = () => {
 
     if (res.status === 404) {
       return showswal('کد وارد شده معتبر نمی باشد', 'error', 'تلاش مجدد')
+
     } else if (res.status === 422) {
       return showswal('کد وارد شده منقضی می باشد', 'error', 'تلاش مجدد')
 
@@ -212,7 +211,8 @@ const CartTable = () => {
               <tbody>
                 {card.length > 0 && card.map((cart) => {
                   return (
-                    <tr className="bg-white h-[120px] rounded-[20px] overflow-hidden border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <React.Fragment  key={cart.id}>
+                          <tr   className="bg-white h-[120px] rounded-[20px] overflow-hidden border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                       <td className="p-4 hidden md:block ">
                         <Image
                           width={100}
@@ -259,11 +259,15 @@ const CartTable = () => {
                           <div>
                             <input
                               value={cart.counter}
+                              onChange={(e)=>setCounter(e.target.value)}
                               type="number"
                               id="first_product"
                               className="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                               required
+
+
                             />
+  
                           </div>
                           <button
                             className="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
@@ -303,6 +307,8 @@ const CartTable = () => {
                         </Link>
                       </td>
                     </tr>
+                    </React.Fragment>
+                
                   )
                 })}
               </tbody>

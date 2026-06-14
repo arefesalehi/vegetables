@@ -1,5 +1,6 @@
+
 import connectToDB from '@/configs/db'
-import cooperationModel from '@/models/product'
+import productModel from '@/models/product'
 import { publicUploadUrl } from '@/utils/publicBaseUrl'
 import { ensureUploadsRoot } from '@/utils/uploadsStorage'
 import { writeFile } from 'fs/promises'
@@ -13,9 +14,22 @@ export async function POST(req) {
     
     await connectToDB()
     const formData = await req.formData()
-    const title = formData.get('title')
+    const name = formData.get('name')
     const img = formData.get('img')
-    const desc = formData.get('desc')
+    const price = formData.get('price')
+    const shortDescription = formData.get('shortDescription')
+    const longDescription = formData.get('longDescription')
+    const weight = formData.get('weight')
+    const category = formData.get('category')
+    const count = formData.get('count')
+    const code = formData.get('code')
+    const logo = formData.get('logo')
+    const howToSave = formData.get('howToSave')
+    const tags = formData.get('tags')
+    const score = formData.get('score')
+  
+
+
 
 
 
@@ -26,7 +40,7 @@ export async function POST(req) {
     await writeFile(imgPath, buffer)
    
 
-    const cooperation = await cooperationModel.create({
+    const products = await productModel.create({
       name,
       price,
       shortDescription,
@@ -43,7 +57,7 @@ export async function POST(req) {
     })
 
     return Response.json(
-      { message: 'Product created successfully :))', data: product },
+      { message: 'Product created successfully :))', data: products },
       { status: 201 },
     )
   } catch (err) {

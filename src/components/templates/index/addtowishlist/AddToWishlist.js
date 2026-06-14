@@ -1,43 +1,34 @@
 'use client'
 
 import { showswal } from '@/utils/helper'
+import { useRouter } from 'next/navigation'
+
 import React, { useEffect, useState } from 'react'
 import { FaHeart } from 'react-icons/fa'
 
 const AddToWishlist = ({ notify, productId, userId }) => {
 
-  const [user, setUser] = useState({})
+const router= useRouter()
+
+console.log('userid' , userId);
 
 
-  // useEffect(() => {
-  //   const authUser = async () => {
-  //     const res = await fetch("/api/auth/me");
-   
-
-  //     console.log(res);
-  //     if (res.status === 200) {
-  //       const data = await res.json();
-   
-  //       setUser({ ...data });
-  //     }
-  //   };
-
-  //   authUser();
-  // }, []);
 
   const addTowishlist = async (e) => {
     e.preventDefault()
-    if (!userId) {
+    if (!userId || typeof userId !== "string" ) {
       return showswal("برای افزودن به علاقه مندی ها ابتدا لاگین شوید  ", "error", "ok")
 
     }
+
+   
 
     const res = await fetch('/api/wishlists', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ product: productId, user: userId })
+      body: JSON.stringify({ product: productId, user: userId  })
     });
 
     const data = await res.json();
@@ -45,6 +36,8 @@ const AddToWishlist = ({ notify, productId, userId }) => {
 
     if (res.status === 201) {
       notify();
+    router.refresh()
+
     } else {
       console.error('⚠️ Error adding to wishlist:', data.message);
     }

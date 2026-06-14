@@ -410,7 +410,7 @@ const Banner = () => {
           <SwiperSlide className="">
             <div className="w-full sm:h-[640px]  xl:h-[1000px] lg:h-[700px] md:h-[600px]   h-[640px]  flex-col  md:flex-row md:justify-center bg-white flex   ">
               <span className="md:w-full xl:w-[57%] flex flex-col m-auto justify-center items-center md:flex-row md:justify-start md:items-start md:block  lg:pt-0  xl:pt-0  md:pt-[14%]  sm:pt-[55px] pt-[45px]  w-[90%] sm:m-auto   xl:pr-[197px] lg:pr-[130px] md:pr-[10%] ">
-                <h1 className=" xl:text-7xl lg:text-6xl md:text-5xl  text-2xl  md:pt-5  font-semibold ">
+                <h1 className=" xl:text-7xl lg:text-6xl md:text-5xl  text-2xl  md:pt-5   font-semibold ">
                   {' '}
                   خوشمزه-لذیذ
                   <br />
@@ -445,7 +445,7 @@ const Banner = () => {
                   height={523}
                   src="/images/food-image-rtl.png"
                   alt='pic'
-                  className='absolute lg:left-[50%] lg:bottom-[-20px] w-[190px] sm:w-[70%] sm:bottom-[-30px] bottom-[24px] md:bottom-[-28px] md:w-[100%]  xl:left-[12%] xl:top-[-130px] md:left-[30%]    '
+                  className='absolute lg:left-[50%] lg:bottom-[-20px] w-[190px] sm:w-[70%] sm:bottom-[-30px] bottom-[24px] md:bottom-[-28px] md:w-[100%]  xl:left-[12%] xl:top-[-200px] md:left-[30%]    '
 
                 />
 

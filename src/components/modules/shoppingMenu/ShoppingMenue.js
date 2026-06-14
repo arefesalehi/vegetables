@@ -102,7 +102,7 @@ const ShoppingMenue = () => {
           {
             cart.map((cart) => {
               return (
-                <div className='w-[90%] m-auto border-solid border-[1px] border-gray-300 rounded-md h-[100px] mt-5 flex justify-between items-center '>
+                <div key={cart.id} className='w-[90%] m-auto border-solid border-[1px] border-gray-300 rounded-md h-[100px] mt-5 flex justify-between items-center '>
                   <div className=" h-[280px] p-[0.5rem] flex justify-center items-center">
                     <Link href={`/`}>
                       <Image width={290} height={200} alt="pic" src={cart.img} className="h-[80px] w-[80px]" />

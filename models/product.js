@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import commentModel from '@/models/comment'
 
-const Schema = mongoose.Schema({
+const Schema = new mongoose.Schema({
   name: {
     type: String,
     required: true,

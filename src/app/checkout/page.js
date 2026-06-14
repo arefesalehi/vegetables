@@ -62,6 +62,7 @@ const page = () => {
             </div>
           </div>
 
+
           <div className="w-full border-b-2 p-3 sm:p-5 flex justify-between items-center text-sm sm:text-base">
             <div className="font-bold">جمع کل</div>
             <div className="font-semibold flex justify-end">

@@ -77,7 +77,7 @@ const BestSeller = ({ products, user }) => {
           >
             {list.map((product) => (
               <SwiperSlide key={product._id}>
-                <ProductCard {...product} user={user} />
+                <ProductCard {...product}  user={user} />
               </SwiperSlide>
             ))}
 

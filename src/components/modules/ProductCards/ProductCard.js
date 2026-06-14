@@ -14,8 +14,10 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { useCart } from '@/context/Cartcontex'
 
 
+
 const ProductCard = ({ img, name, price, _id, count, score, user }) => {
   const [counter, setCounter] = useState(1)
+
 
   const { setIsCartOpen, openCart, cart, setCart } = useCart()
 
@@ -73,12 +75,16 @@ const ProductCard = ({ img, name, price, _id, count, score, user }) => {
   }
 
 
-  const HandleClick = () => {
-    addToCart()
-    openCart()
-    setIsCartOpen(true) // ✅ این خط باعث باز شدن سبد خرید در صفحه اصلی میشه
-
+const HandleClick = () => {
+  if (count === 0) {
+    showswal('این محصول موجود نیست', 'error', 'باشه');
+    return;
   }
+
+  addToCart();
+  openCart();
+  setIsCartOpen(true);
+};
 
 
 
@@ -142,7 +148,7 @@ const ProductCard = ({ img, name, price, _id, count, score, user }) => {
 
         {/* ❤️ افزودن به علاقه‌مندی‌ها */}
         <div className=''>
-          <AddToWishlist notify={notify} productId={_id} userId={user} />
+          <AddToWishlist notify={notify} productId={_id} userId={user?._id} />
 
 
           {

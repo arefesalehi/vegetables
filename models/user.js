@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Schema = mongoose.Schema({
+const Schema =  mongoose.Schema({
     name:{
         type:String,
         default:'کاربر بوتونیکا'
@@ -26,3 +26,4 @@ const Schema = mongoose.Schema({
 
 const model = mongoose.models.User || mongoose.model('User', Schema)
 export default model
+

@@ -1,3 +1,4 @@
+
 import AllBreadCrumb from '@/components/modules/AllBreadCrumb/AllBreadCrumb'
 import Detailbar from '@/components/modules/detailBar/Detailbar'
 import Footer from '@/components/modules/footer/Footer'
@@ -9,9 +10,11 @@ import wishlistModel from '@/models/wishlist'
 import connectToDB from '@/configs/db'
 import ShoppingMenue from '@/components/modules/shoppingMenu/ShoppingMenue'
 
+
 const page = async () => {
+
   let wishes = []
-  connectToDB()
+  await connectToDB()
   const user = await authUser()
 
   console.log('wishlist User=>', user)
